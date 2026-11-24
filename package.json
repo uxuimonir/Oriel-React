@@ -1,0 +1,31 @@
+{
+  "name": "oriel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Oriel \u2014 a natural-light photography portfolio template built with Next.js (App Router) and Tailwind CSS 4.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "STATIC_EXPORT=1 next build",
+    "typecheck": "tsc --noEmit",
+    "og": "node scripts/make-og.mjs"
+  },
+  "dependencies": {
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "sharp": "^0.35.5",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

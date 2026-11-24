@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+/* ---- Design tokens, taken from the Framer project ---- */
+@theme {
+  --color-salt: rgb(241, 238, 231);
+  --color-stone: rgb(230, 226, 216);
+  --color-basalt: rgb(18, 19, 18);
+  --color-ash: rgb(94, 96, 91);
+  --color-dusk: rgb(28, 27, 25);
+  --color-night: rgb(13, 14, 14);
+  --color-ondark: rgb(239, 238, 233);
+  --color-ashnight: rgb(156, 157, 151);
+  --color-blue: rgb(51, 70, 211);
+  --color-bluenight: rgb(142, 155, 255);
+  --color-hairline: rgba(18, 19, 18, 0.14);
+  --color-hairlinedark: rgba(237, 235, 229, 0.16);
+
+  --color-tide: rgb(221, 229, 228);
+  --color-lowcloud: rgb(225, 227, 229);
+  --color-seahours: rgb(220, 228, 236);
+  --color-saltline: rgb(239, 226, 214);
+  --color-aftermidnight: rgb(16, 18, 31);
+  --color-limewash: rgb(243, 239, 230);
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+
+  --breakpoint-sm: 390px;
+  --breakpoint-md: 810px;
+  --breakpoint-lg: 1200px;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* ---- Black theme: the same design, inverted. Page, bands and surfaces keep
+     their three-step rhythm so sections still read apart on near-black. ---- */
+  --color-salt: rgb(11, 11, 11);        /* page */
+  --color-stone: rgb(22, 22, 22);       /* raised strip (ticker) */
+  --color-basalt: rgb(239, 238, 233);   /* body text */
+  --color-ash: rgb(150, 151, 146);      /* muted text */
+  --color-dusk: rgb(18, 18, 18);        /* mid band */
+  --color-night: rgb(0, 0, 0);          /* deep band */
+  --color-ondark: rgb(239, 238, 233);
+  --color-ashnight: rgb(150, 151, 146);
+  --color-blue: rgb(142, 155, 255);
+  --color-bluenight: rgb(142, 155, 255);
+  --color-hairline: rgba(237, 235, 229, 0.16);
+  --color-hairlinedark: rgba(237, 235, 229, 0.16);
+
+  --color-tide: rgb(18, 22, 22);
+  --color-lowcloud: rgb(19, 20, 22);
+  --color-seahours: rgb(16, 21, 27);
+  --color-saltline: rgb(26, 20, 16);
+  --color-aftermidnight: rgb(10, 11, 18);
+  --color-limewash: rgb(22, 21, 18);
+}
+
+/* Optional light appearance: set data-theme="light" on <html>. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-salt: rgb(241, 238, 231);
+  --color-stone: rgb(230, 226, 216);
+  --color-basalt: rgb(18, 19, 18);
+  --color-ash: rgb(94, 96, 91);
+  --color-dusk: rgb(28, 27, 25);
+  --color-night: rgb(13, 14, 14);
+  --color-ondark: rgb(239, 238, 233);
+  --color-ashnight: rgb(156, 157, 151);
+  --color-blue: rgb(51, 70, 211);
+  --color-bluenight: rgb(142, 155, 255);
+  --color-hairline: rgba(18, 19, 18, 0.14);
+  --color-hairlinedark: rgba(237, 235, 229, 0.16);
+  --color-tide: rgb(221, 229, 228);
+  --color-lowcloud: rgb(225, 227, 229);
+  --color-seahours: rgb(220, 228, 236);
+  --color-saltline: rgb(239, 226, 214);
+  --color-aftermidnight: rgb(16, 18, 31);
+  --color-limewash: rgb(243, 239, 230);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+html, body { overflow-x: clip; max-width: 100%; }
+body {
+  background: var(--color-salt);
+  color: var(--color-basalt);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Type scale: exact Framer presets, same breakpoints (0 / 390 / 810 / 1200) ---- */
+.t-hero { font-family: var(--font-sans); font-weight: 300; font-size: 44px; line-height: 0.9em; letter-spacing: -0.045em; }
+.t-hero-serif { font-family: var(--font-serif); font-weight: 400; font-size: 46px; line-height: 0.9em; letter-spacing: -0.02em; }
+.t-xl { font-family: var(--font-sans); font-weight: 300; font-size: 34px; line-height: 0.92em; letter-spacing: -0.04em; }
+.t-l { font-family: var(--font-sans); font-weight: 300; font-size: 36px; line-height: 0.95em; letter-spacing: -0.035em; }
+.t-l-serif { font-family: var(--font-serif); font-weight: 400; font-size: 40px; line-height: 0.95em; letter-spacing: -0.01em; }
+.t-m { font-family: var(--font-sans); font-weight: 300; font-size: 30px; line-height: 1em; letter-spacing: -0.03em; }
+.t-lead { font-size: 20px; line-height: 1.35em; letter-spacing: -0.01em; }
+.t-body { font-size: 16px; line-height: 1.55em; }
+.t-small { font-size: 14px; line-height: 1.5em; }
+.t-meta { font-family: var(--font-mono); font-size: 11px; line-height: 1.5em; letter-spacing: 0.07em; text-transform: uppercase; }
+.t-quote { font-family: var(--font-serif); font-weight: 400; font-size: 30px; line-height: 1.04em; letter-spacing: -0.01em; }
+.t-button { font-size: 14px; font-weight: 500; }
+.t-logo { font-size: 16px; font-weight: 500; line-height: 1em; letter-spacing: 0.01em; }
+
+@media (min-width: 390px) {
+  .t-hero { font-size: 56px; }
+  .t-hero-serif { font-size: 60px; }
+  .t-xl { font-size: 44px; }
+}
+@media (min-width: 810px) {
+  .t-hero { font-size: 96px; }
+  .t-hero-serif { font-size: 100px; }
+  .t-xl { font-size: 72px; }
+  .t-l { font-size: 52px; }
+  .t-l-serif { font-size: 56px; }
+  .t-m { font-size: 40px; }
+  .t-lead { font-size: 22px; }
+  .t-body { font-size: 17px; }
+  .t-small { font-size: 15px; }
+  .t-meta { font-size: 12px; }
+  .t-quote { font-size: 40px; }
+  .t-button, .t-logo { font-size: 15px; }
+  .t-logo { font-size: 17px; }
+}
+@media (min-width: 1200px) {
+  .t-hero { font-size: 140px; }
+  .t-hero-serif { font-size: 148px; }
+  .t-xl { font-size: 96px; }
+  .t-l { font-size: 68px; }
+  .t-l-serif { font-size: 72px; }
+  .t-m { font-size: 52px; }
+  .t-lead { font-size: 24px; }
+  .t-body { font-size: 18px; }
+  .t-quote { font-size: 52px; }
+  .t-logo { font-size: 18px; }
+}
+
+/* ---- Layout: Framer section rhythm (120 / 160 vertical, 48 side, 1536 content) ---- */
+.shell { width: 100%; max-width: 1536px; margin-inline: auto; padding-inline: 20px; }
+@media (min-width: 810px) { .shell { padding-inline: 32px; } }
+@media (min-width: 1200px) { .shell { padding-inline: 48px; } }
+
+.band { padding-block: 72px 88px; }
+@media (min-width: 810px) { .band { padding-block: 96px 120px; } }
+@media (min-width: 1200px) { .band { padding-block: 120px 160px; } }
+
+.rule { border-top: 1px solid var(--color-hairline); }
+.rule-dark { border-top: 1px solid var(--color-hairlinedark); }
+
+/* ---- Motion: mirrors Framer appearEffect / textEffect ---- */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+[data-reveal].is-in { opacity: 1; transform: none; }
+
+[data-frame] { overflow: hidden; }
+[data-frame] img {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-frame].is-in img { opacity: 1; transform: none; }
+[data-frame][data-hover] img { transition: opacity 1.2s cubic-bezier(0.22,1,0.36,1), transform 0.6s cubic-bezier(0.22,1,0.36,1); }
+[data-frame][data-hover]:hover img { transform: scale(1.03); }
+
+[data-words] > span {
+  display: inline-block;
+  white-space: pre;
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(22px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-words].is-in > span { opacity: 1; filter: blur(0); transform: none; }
+
+.ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; }
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  [data-reveal], [data-frame] img, [data-words] > span { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* ---- Links: colour + underline on hover, never movement (Framer link style presets) ---- */
+.link-nav,
+.link-quiet {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.3s cubic-bezier(0.22, 1, 0.36, 1), text-decoration-color 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-nav:hover,
+.link-nav[aria-current="page"] { color: var(--color-blue); text-decoration-color: currentColor; }
+.link-nav[aria-current="page"] { text-decoration-color: transparent; }
+.link-quiet:hover { color: var(--color-bluenight); text-decoration-color: currentColor; }
+.link-nav-dark:hover,
+.link-nav-dark[aria-current="page"] { color: var(--color-bluenight); }
+
+/* ---- Count-up numbers ---- */
+[data-count] { font-variant-numeric: tabular-nums; }
+
+/* ---- Contact-sheet frames: soft exposure-in, staggered per column ---- */
+[data-sheet] [data-frame] img { transition-duration: 1s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none !important; }
+}
