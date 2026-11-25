@@ -14,7 +14,7 @@ import NotFound from "@/pages/NotFound"
 
 export default function App() {
   return (
-    <div id="top">
+    <>
       <noscript>
         <style>{`[data-reveal],[data-frame] img,[data-words]>span{opacity:1!important;transform:none!important;filter:none!important}`}</style>
       </noscript>
@@ -42,6 +42,6 @@ export default function App() {
       </main>
       <Footer />
       <Motion />
-    </div>
+    </>
   )
 }
