@@ -11,7 +11,7 @@ export default function SelectedWork() {
         <p className="t-meta text-blue">{work.eyebrow}</p>
 
         <div className="mt-5 flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <h2 className="t-l max-w-[760px]">
+          <h2 className="t-l max-w-[14ch]">
             <Words text={work.title[0]} />{" "}
             <span className="t-l-serif italic"><Words text={work.title[1]} /></span>
           </h2>

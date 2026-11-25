@@ -7,10 +7,10 @@ export default function Statement() {
   return (
     <section className="band">
       <div className="shell">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_0.9fr]">
+        <div className="grid gap-12 lg:grid-cols-[1fr_360px] lg:gap-16">
           <Reveal>
             <p className="t-meta text-ash">{statement.eyebrow}</p>
-            <p className="t-m mt-6 max-w-[22ch]">{statement.body}</p>
+            <p className="t-m mt-6 max-w-[30ch]">{statement.body}</p>
           </Reveal>
           <Reveal as="figure" delay={0.08}>
             <Frame src={statement.image} alt={statement.alt} className="aspect-[4/5] w-full" sizes="(min-width:1200px) 30vw, 100vw" />

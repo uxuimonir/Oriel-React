@@ -6,17 +6,10 @@ import Frame from "@/components/Frame"
 import { projects } from "@/data/content"
 import { delay } from "@/lib/style"
 
-/** Desktop column spans of the seven frames in one contact sheet: 3 up, then 4. */
-const spans = [
-  "md:col-span-4", "md:col-span-5", "md:col-span-3",
-  "md:col-span-3", "md:col-span-3", "md:col-span-3", "md:col-span-3",
-]
-
-/** Phone keeps each frame's own ratio; from tablet up the sheet reads as two even strips. */
-const ratio = (r: string, i: number) => {
+/** Phone keeps each frame's own ratio; from tablet up every frame is the same 4:3 cell. */
+const ratio = (r: string) => {
   const own = r === "portrait" ? "aspect-[4/5]" : r === "square" ? "aspect-square" : "aspect-[3/2]"
-  const strip = i < 3 ? "md:aspect-auto md:h-[200px] lg:h-[260px]" : "md:aspect-auto md:h-[170px] lg:h-[210px]"
-  return `${own} ${strip}`
+  return `${own} md:aspect-[4/3]`
 }
 
 const chips = [
@@ -86,16 +79,16 @@ export default function WorkIndex({ intro }: { intro: React.ReactNode }) {
                 </Link>
               </div>
 
-              <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 md:mt-8 md:grid-cols-12 md:gap-x-6 md:gap-y-10" data-sheet>
+              <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-8 md:mt-8 md:grid-cols-4 md:gap-x-6 md:gap-y-10" data-sheet>
                 {p.images.map((im, i) => (
-                  <li key={im.src} className={spans[i]} data-reveal style={delay((i % 4) * 0.06)}>
+                  <li key={im.src} data-reveal style={delay((i % 4) * 0.06)}>
                     <Link href={`/work/${p.slug}`} className="group block">
                       <Frame
                         src={im.src}
                         alt={im.caption}
-                        className={`w-full ${ratio(im.ratio, i)}`}
-                        eager={i < 3}
-                        sizes="(min-width:1200px) 25vw, (min-width:810px) 33vw, 50vw"
+                        className={`w-full ${ratio(im.ratio)}`}
+                        eager={i < 4}
+                        sizes="(min-width:810px) 25vw, 50vw"
                       />
                       <p className="t-meta mt-3 text-ash transition-colors group-hover:text-blue">{im.label}</p>
                     </Link>

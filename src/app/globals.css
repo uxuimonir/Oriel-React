@@ -138,9 +138,9 @@ body {
 }
 
 /* ---- Layout: Framer section rhythm (120 / 160 vertical, 48 side, 1536 content) ---- */
-.shell { width: 100%; max-width: 1536px; margin-inline: auto; padding-inline: 20px; }
-@media (min-width: 810px) { .shell { padding-inline: 32px; } }
-@media (min-width: 1200px) { .shell { padding-inline: 48px; } }
+.shell { width: min(1200px, 100% - 40px); margin-inline: auto; }
+@media (min-width: 810px) { .shell { width: min(1200px, 100% - 64px); } }
+@media (min-width: 1200px) { .shell { width: min(1200px, 100% - 96px); } }
 
 .band { padding-block: 72px 88px; }
 @media (min-width: 810px) { .band { padding-block: 96px 120px; } }
