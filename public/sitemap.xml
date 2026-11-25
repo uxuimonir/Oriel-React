@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://oriel.photo</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://oriel.photo/work</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/studio</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/journal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/privacy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/terms</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/cookies</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://oriel.photo/work/tide-tables</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://oriel.photo/work/low-cloud</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://oriel.photo/work/sea-hours</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://oriel.photo/work/salt-line</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://oriel.photo/work/after-midnight</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://oriel.photo/work/limewash</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://oriel.photo/journal/fog-hour</loc><lastmod>2026-05-07</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriel.photo/journal/one-window</loc><lastmod>2026-02-18</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriel.photo/journal/forty-mornings</loc><lastmod>2026-03-14</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriel.photo/journal/light-meter</loc><lastmod>2026-01-22</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriel.photo/journal/blue-shadows</loc><lastmod>2025-10-03</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriel.photo/journal/low-cloud-kit</loc><lastmod>2025-06-18</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://oriel.photo/journal/printing-the-dark</loc><lastmod>2025-02-09</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+</urlset>
