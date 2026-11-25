@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero"
 import Statement from "@/components/Statement"
 import SelectedWork from "@/components/SelectedWork"
-import Ticker from "@/components/Ticker"
 import CommissionsBand from "@/components/CommissionsBand"
 import AboutBand from "@/components/AboutBand"
 import JournalBand from "@/components/JournalBand"
@@ -25,7 +24,6 @@ export default function Home() {
       <Hero />
       <Statement />
       <SelectedWork />
-      <Ticker />
       <CommissionsBand />
       <AboutBand />
       <JournalBand />

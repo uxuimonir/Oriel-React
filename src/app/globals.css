@@ -179,10 +179,6 @@ body {
 }
 [data-words].is-in > span { opacity: 1; filter: blur(0); transform: none; }
 
-.ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; }
-.ticker:hover .ticker-track { animation-play-state: paused; }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   [data-reveal], [data-frame] img, [data-words] > span { opacity: 1 !important; transform: none !important; filter: none !important; }
@@ -212,6 +208,3 @@ body {
 /* ---- Contact-sheet frames: soft exposure-in, staggered per column ---- */
 [data-sheet] [data-frame] img { transition-duration: 1s; }
 
-@media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none !important; }
-}

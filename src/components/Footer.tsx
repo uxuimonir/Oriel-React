@@ -38,6 +38,13 @@ export default function Footer() {
 
         <div className="rule-dark mt-14 flex flex-col gap-4 pt-6 md:flex-row md:items-center md:justify-between">
           <p className="t-meta max-w-[760px] text-ashnight">{footer.legal}</p>
+          <ul className="flex items-center gap-6">
+            {footer.legalLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="t-small link-quiet text-ondark">{l.label}</Link>
+              </li>
+            ))}
+          </ul>
           <a href="#top" className="t-meta link-quiet text-ondark">{footer.back}</a>
         </div>
       </div>

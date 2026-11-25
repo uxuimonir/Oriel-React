@@ -321,7 +321,6 @@ export const workIndex = {
   filters: ["All", "01 Tide Tables", "02 Low Cloud", "03 Sea Hours", "04 The Salt Line", "05 After Midnight", "06 Limewash"],
 }
 
-export const ticker = "06:52 first light · 12:40 white sky · 18:40 golden hour · 21:30 blue hour"
 
 export const commissions = {
   eyebrow: "12:40 — Commissions",
@@ -635,6 +634,14 @@ export const contact = {
   submit: "Send the note",
 }
 
+export const enquiry = {
+  to: site.email,
+  eyebrow: "N°01 — Enquiry",
+  title: "Tell me about the place.",
+  body: "Two or three lines is plenty: where, which season, and what you hope the light will do. I read every message myself and reply within two working days.",
+  kinds: ["Portrait series", "Editorial or fashion", "Commercial campaign", "Travel or location", "Something else"],
+}
+
 export const brief = {
   eyebrow: "Before you write",
   title: ["Five things", "to send."],
@@ -673,6 +680,11 @@ export const footer = {
         { label: "Contact", href: "/contact" },
       ],
     },
+  ],
+  legalLinks: [
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
+    { label: "Cookies", href: "/cookies" },
   ],
   letterTitle: "Field notes",
   letter: "One letter a season: where the light was good, and what it taught me. No more than four a year.",

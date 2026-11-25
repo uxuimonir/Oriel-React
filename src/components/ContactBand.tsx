@@ -3,7 +3,8 @@ import type { ElementType } from "react"
 import Frame from "./Frame"
 import Words from "./Words"
 import Reveal from "./Reveal"
-import { contact } from "@/data/content"
+import EnquiryForm from "./EnquiryForm"
+import { contact, enquiry } from "@/data/content"
 
 interface Props { variant?: "band" | "page"; level?: ElementType }
 
@@ -58,6 +59,20 @@ export default function ContactBand({ variant = "band", level: Head = "h2" }: Pr
             ))}
           </Reveal>
         </div>
+
+        {isPage && (
+          <div className="rule-dark mt-16 grid gap-10 pt-16 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
+            <div>
+              <p className="t-meta flex items-center gap-2 text-bluenight">
+                <span aria-hidden="true" className="inline-block h-[6px] w-[6px] rounded-full bg-bluenight" />
+                {enquiry.eyebrow}
+              </p>
+              <h2 className="t-quote mt-6 italic">{enquiry.title}</h2>
+              <p className="t-body mt-6 max-w-[44ch] text-ondark/70">{enquiry.body}</p>
+            </div>
+            <EnquiryForm />
+          </div>
+        )}
 
         {!isPage && (
           <figure className="mt-16">
