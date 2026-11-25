@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import Words from "@/components/Words"
 import Frame from "@/components/Frame"
 import JournalRow from "@/components/JournalRow"
@@ -21,7 +21,7 @@ export default function PostPage() {
         <header className="band pt-10 md:pt-16">
           <div className="shell max-w-[860px]">
             <p className="t-meta text-ash">
-              {post.category} · <time dateTime={post.date}>{post.dateLabel}</time> · {post.read} read
+              <Link to="/journal" className="link-quiet">← Journal</Link> · {post.category} · <time dateTime={post.date}>{post.dateFull}</time> · {post.read} read
             </p>
             <h1 className="t-xl mt-6"><Words text={post.title} /></h1>
             <p className="t-lead mt-8 max-w-[52ch] text-ash">{post.standfirst}</p>
@@ -53,7 +53,10 @@ export default function PostPage() {
 
         <section className="band bg-stone/50">
           <div className="shell">
-            <p className="t-meta text-ash">{journal.more}</p>
+            <div className="flex items-baseline justify-between gap-6">
+              <p className="t-meta text-ash">{journal.more}</p>
+              <Link to="/journal" className="t-meta link-quiet">All entries →</Link>
+            </div>
             <ul className="mt-8">
               {more.map((p, i) => <JournalRow key={p.slug} post={p} delay={Number((i * 0.07).toFixed(2))} />)}
             </ul>

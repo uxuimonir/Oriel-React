@@ -64,6 +64,8 @@ export interface Project {
   slug: string
   kind: string
   location: string
+  locationFull?: string
+  indexKind: string
   year: string
   hours: string
   client: string
@@ -87,6 +89,7 @@ export const projects: Project[] = [
     title: "Tide Tables",
     slug: "tide-tables",
     kind: "Portrait series",
+    indexKind: "Portraits",
     location: "Póvoa de Varzim, Portugal",
     year: "2025",
     hours: "06:30 – 10:00",
@@ -102,11 +105,11 @@ export const projects: Project[] = [
     body3: "Fold Quarterly ran twelve of them across twenty pages, with the families' own words beside them.",
     tint: "var(--color-tide)",
     images: [
-      { src: img("InC3bii61lkT4lHPaj5w51tA.jpg"), label: "Opening", ratio: "portrait", caption: "Black and white portrait of an elderly man with a long white beard and a knotted headscarf, eyes lowered." },
-      { src: img("08EuRcJ8RtrVCUZ7dOnM5As.jpg"), label: "Establishing", ratio: "landscape", caption: "Establishing — the harbour at slack water, 06:40" },
+      { src: img("InC3bii61lkT4lHPaj5w51tA.jpg"), label: "Opening", ratio: "portrait", caption: "Portrait of an elderly man with a grey beard, in a knotted headscarf and pale work shirt, eyes lowered." },
+      { src: img("08EuRcJ8RtrVCUZ7dOnM5As.jpg"), label: "Establishing", ratio: "landscape", caption: "Establishing — masts and hulls against a copper dawn, 06:40" },
       { src: img("lfhwxeAodMU5a79OjrXhtRHWis.jpg"), label: "Detail", ratio: "portrait", caption: "Detail — rope, coiled every winter" },
       { src: img("9jU3yHpQDjVh6xER00eUGPzEeo.jpg"), label: "Wide", ratio: "landscape", caption: "Wide — a boat hauled up for the night, 20:10" },
-      { src: img("7D7DfBhyc1fgzV2eaeIIxt4ouC0.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — hauling the mooring chain, 1/60 s" },
+      { src: img("7D7DfBhyc1fgzV2eaeIIxt4ouC0.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — a cast net spreading from the bow, 1/60 s" },
       { src: img("znywpyuGhbHjurTLXiIOUQ05cOM.jpg"), label: "Quiet", ratio: "portrait", caption: "Quiet — the first boat out, 06:20" },
       { src: img("4Zse7vajPxQlusVsxUDoAMcXiU.jpg"), label: "Closing", ratio: "landscape", caption: "Closing — the last of the morning light" },
     ],
@@ -124,6 +127,7 @@ export const projects: Project[] = [
     title: "Low Cloud",
     slug: "low-cloud",
     kind: "Fashion editorial",
+    indexKind: "Editorial",
     location: "Salzkammergut, Austria",
     year: "2024",
     hours: "09:00 – 16:00, overcast",
@@ -139,12 +143,12 @@ export const projects: Project[] = [
     body3: "The magazine ran fourteen pages without a single blue sky. Nobody asked for one.",
     tint: "var(--color-lowcloud)",
     images: [
-      { src: img("gA2ojH18vo4dBCZYc8iiru3BcM.jpg"), label: "Opening", ratio: "portrait", caption: "A man in a black hat and dark coat, looking to one side." },
+      { src: img("gA2ojH18vo4dBCZYc8iiru3BcM.jpg"), label: "Opening", ratio: "portrait", caption: "A man in sunglasses and a black vest, a grey-green jacket pulled round his shoulders, looking to one side." },
       { src: img("cPs4xMDxoK3OZnAKnhObgKWRIQ.jpg"), label: "Establishing", ratio: "landscape", caption: "Establishing — the ridges, 09:30" },
       { src: img("rgsOrbxVvdUubjqmwhEOWZXnbg.jpg"), label: "Detail", ratio: "portrait", caption: "Detail — a watch, and weather" },
-      { src: img("lGscyXIS42RllTHokK0kF5xPy4.jpg"), label: "Wide", ratio: "landscape", caption: "Wide — the boathouse, 15:40" },
+      { src: img("lGscyXIS42RllTHokK0kF5xPy4.jpg"), label: "Wide", ratio: "landscape", caption: "Wide — mist lying in the valley, 15:40" },
       { src: img("dsoLDBu0ZJbr6JrGu9r6G7J7Q.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — the one clear afternoon" },
-      { src: img("gax6V0OwxKFOtM6XwXlaCk3R93M.jpg"), label: "Quiet", ratio: "portrait", caption: "Quiet — the lake shore, 11:15" },
+      { src: img("gax6V0OwxKFOtM6XwXlaCk3R93M.jpg"), label: "Quiet", ratio: "portrait", caption: "Quiet — a lone figure on the bridge in orange haze, 11:15" },
       { src: img("fLVBUltkjnQQ8cNOfUfgBeUiakw.jpg"), label: "Closing", ratio: "landscape", caption: "Closing — the fog closing again" },
     ],
     credits: [
@@ -161,6 +165,7 @@ export const projects: Project[] = [
     title: "Sea Hours",
     slug: "sea-hours",
     kind: "Travel",
+    indexKind: "Landscape",
     location: "São Miguel, Azores",
     year: "2025",
     hours: "05:52 – 21:30",
@@ -177,11 +182,11 @@ export const projects: Project[] = [
     tint: "var(--color-seahours)",
     images: [
       { src: img("DOOgqqgdCiWyuOjtioENZT1pAM.jpg"), label: "Opening", ratio: "landscape", caption: "07:10 — first light, the ninth morning" },
-      { src: img("ciz5k6RNvtX4GQcHNFwF9Yzy7kA.jpg"), label: "Establishing", ratio: "landscape", caption: "05:52 — before dawn, the harbour lights" },
-      { src: img("WsZtEMrs0bwmk35RAN3JsaQhg.jpg"), label: "Detail", ratio: "portrait", caption: "10:20 — surf, from the cliff top" },
+      { src: img("ciz5k6RNvtX4GQcHNFwF9Yzy7kA.jpg"), label: "Establishing", ratio: "landscape", caption: "05:52 — first colour on the water, before the sun clears it" },
+      { src: img("WsZtEMrs0bwmk35RAN3JsaQhg.jpg"), label: "Detail", ratio: "portrait", caption: "19:15 — the last sun on the swell" },
       { src: img("1J8N7zydrJid9a3SIgxwgsf8U.jpg"), label: "Wide", ratio: "landscape", caption: "17:30 — low sun on the arch" },
-      { src: img("u2vB2g2Oy9lzSHwKOVbVho5rKcw.jpg"), label: "Motion", ratio: "landscape", caption: "Moving sea water blurred by a slow shutter into streaks of blue and white." },
-      { src: img("NZ7DTSIRhLAI6QfowLKNHxPrw.jpg"), label: "Quiet", ratio: "portrait", caption: "12:40 — fog, white sky" },
+      { src: img("u2vB2g2Oy9lzSHwKOVbVho5rKcw.jpg"), label: "Motion", ratio: "landscape", caption: "06:35 — surf on dark sand under a pink horizon" },
+      { src: img("NZ7DTSIRhLAI6QfowLKNHxPrw.jpg"), label: "Quiet", ratio: "portrait", caption: "20:05 — a sailboat crossing the harbour mouth, afterglow" },
       { src: img("aXk1OpZlt63XXdWkOgqw2XF0.jpg"), label: "Closing", ratio: "landscape", caption: "21:30 — blue hour, the jetty" },
     ],
     credits: [
@@ -198,7 +203,9 @@ export const projects: Project[] = [
     title: "The Salt Line",
     slug: "salt-line",
     kind: "Commercial campaign",
+    indexKind: "Campaign",
     location: "Namib coast",
+    locationFull: "Namib coast, Namibia",
     year: "2024",
     hours: "15:30 – 19:10",
     client: "Merid Outerwear",
@@ -213,11 +220,11 @@ export const projects: Project[] = [
     body3: "The campaign ran in print and on the street at 1:1 scale. Nobody could find the jacket at first. That was the point.",
     tint: "var(--color-saltline)",
     images: [
-      { src: img("TEPkmH49Gf5taldrN7QHj2Ag.jpg"), label: "Opening", ratio: "portrait", caption: "Portrait — in the grass below the dunes, 18:05" },
+      { src: img("TEPkmH49Gf5taldrN7QHj2Ag.jpg"), label: "Opening", ratio: "portrait", caption: "Figure — one walker on the dune ridge, sun overhead, 15:35" },
       { src: img("FMHtL3ObjwRnQnpczPzi6E5ulM.jpg"), label: "Establishing", ratio: "landscape", caption: "Establishing — the dune crest, 15:40" },
-      { src: img("RIe8AwGC5GIPb2lNAWLJjzeAylc.jpg"), label: "Detail", ratio: "portrait", caption: "Detail — salt, for the lookbook" },
+      { src: img("RIe8AwGC5GIPb2lNAWLJjzeAylc.jpg"), label: "Detail", ratio: "portrait", caption: "Detail — wind ripples on the dune face" },
       { src: img("JZy5C5PUjCIziceUS1CG8M9Ssk.jpg"), label: "Wide", ratio: "landscape", caption: "Wet, mirror-like sand at low tide, the evening sky held in it." },
-      { src: img("yHOC0E5HZ5CdcdtEL2a4J2AXz4.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — on the dry pan, 1/15 s" },
+      { src: img("yHOC0E5HZ5CdcdtEL2a4J2AXz4.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — walking out across the pan, long shadows" },
       { src: img("bXyZGXogxO8fHasmUP2mKgZlM7k.jpg"), label: "Quiet", ratio: "portrait", caption: "Quiet — the pan, close up" },
       { src: img("eRlv5j0jVYYByLuqwxeg8c3C9LY.jpg"), label: "Closing", ratio: "landscape", caption: "Closing — the last afternoon on the coast" },
     ],
@@ -235,6 +242,7 @@ export const projects: Project[] = [
     title: "After Midnight",
     slug: "after-midnight",
     kind: "Urban documentary",
+    indexKind: "Documentary",
     location: "Lisbon",
     year: "2023",
     hours: "23:00 – 06:00",
@@ -250,11 +258,11 @@ export const projects: Project[] = [
     body3: "",
     tint: "var(--color-aftermidnight)",
     images: [
-      { src: img("WJpVXJuz8UGBoqTl59NfANDlU.jpg"), label: "Opening", ratio: "portrait", caption: "Portrait — the last train, 00:50" },
+      { src: img("WJpVXJuz8UGBoqTl59NfANDlU.jpg"), label: "Opening", ratio: "portrait", caption: "Platform — a lone traveller waiting for the last train, 00:50" },
       { src: img("oc5bfZiavikQNhHuiV4zhzOtbo.jpg"), label: "Establishing", ratio: "landscape", caption: "A long arched bridge lit from beneath at dusk, its lights reflected in the river." },
-      { src: img("BWBOzlapkUtkHDUMrsnjzxRRj9s.jpg"), label: "Detail", ratio: "portrait", caption: "Detail — the first bread, 03:10" },
+      { src: img("BWBOzlapkUtkHDUMrsnjzxRRj9s.jpg"), label: "Detail", ratio: "portrait", caption: "Detail — a street lamp against the first glow, 06:05" },
       { src: img("DAwgyJNl3VwDhQSvONb9PdlfWAo.jpg"), label: "Wide", ratio: "landscape", caption: "Wide — the pier lamps, 00:40" },
-      { src: img("uGyeRv6vtaNjI7lbtYVGRGyz0w.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — the first boat across, 06:10" },
+      { src: img("uGyeRv6vtaNjI7lbtYVGRGyz0w.jpg"), label: "Motion", ratio: "landscape", caption: "Motion — headlights on the river road, 30 s" },
       { src: img("bSh2JctL0PxN1vlYpUdlDUuJ6c.jpg"), label: "Quiet", ratio: "portrait", caption: "Quiet — the last carriage, 01:40" },
       { src: img("kolmen7vgnof89RcpwgsCX7bWs.jpg"), label: "Closing", ratio: "landscape", caption: "Closing — first light over the river" },
     ],
@@ -272,6 +280,7 @@ export const projects: Project[] = [
     title: "Limewash",
     slug: "limewash",
     kind: "Personal study",
+    indexKind: "Study",
     location: "Alentejo, Andalusia, Cyclades",
     year: "2025",
     hours: "12:00 – 14:00",
@@ -287,8 +296,8 @@ export const projects: Project[] = [
     body3: "",
     tint: "var(--color-limewash)",
     images: [
-      { src: img("NrP0JyMi1eYQN3NQC5tnUXjdk4.jpg"), label: "Opening", ratio: "portrait", caption: "A whitewashed chapel with a bright blue dome and a small cross, against a pale blue sky." },
-      { src: img("f98ob4ZtSY2I6h2i75JyDjmYufE.jpg"), label: "Establishing", ratio: "landscape", caption: "A deep window, 12:10" },
+      { src: img("NrP0JyMi1eYQN3NQC5tnUXjdk4.jpg"), label: "Opening", ratio: "portrait", caption: "A whitewashed chapel with a small bell gable on a rocky hilltop above the sea." },
+      { src: img("f98ob4ZtSY2I6h2i75JyDjmYufE.jpg"), label: "Establishing", ratio: "landscape", caption: "White steps and a curved wall, 12:10" },
       { src: img("AC75px8r7DnV62HGhGm9HRyQFWw.jpg"), label: "Detail", ratio: "portrait", caption: "Folded façade, 12:45" },
       { src: img("RD6H90duKqJsL87Dv6xaPgK1jZ0.jpg"), label: "Wide", ratio: "landscape", caption: "The arcade, 13:30" },
       { src: img("i6lU4iSKV20jTh0C9kiDMmcbdM.jpg"), label: "Motion", ratio: "landscape", caption: "Gables, 13:05" },
@@ -377,6 +386,7 @@ export interface Post {
   category: string
   date: string
   dateLabel: string
+  dateFull: string
   read: string
   featureMeta: string
   standfirst: string
@@ -396,6 +406,7 @@ export const posts: Post[] = [
     category: "Field notes",
     date: "2026-05-07",
     dateLabel: "May 2026",
+    dateFull: "7 May 2026",
     read: "6 min",
     featureMeta: "Field notes · May 2026 · 6 min",
     standfirst: "Why the tripod goes up an hour early, and what the last ten minutes of fog give back.",
@@ -417,6 +428,7 @@ export const posts: Post[] = [
     category: "Essay",
     date: "2026-02-18",
     dateLabel: "Feb 2026",
+    dateFull: "18 February 2026",
     read: "5 min",
     featureMeta: "Essay · Feb 2026 · 5 min",
     standfirst: "What a north-facing room teaches about light you cannot move, only wait for.",
@@ -438,12 +450,13 @@ export const posts: Post[] = [
     category: "Field notes",
     date: "2026-03-14",
     dateLabel: "Mar 2026",
+    dateFull: "14 March 2026",
     read: "8 min",
     featureMeta: "Field notes · Mar 2026 · 8 min",
     standfirst: "What six weeks on one basalt ledge taught me about patience, tripods and the colour grey.",
     cover: img("ICHtrFzk4BUGI4eCH7PtX4BxG8.jpg"),
-    coverAlt: "Hands holding a vintage camera in warm light.",
-    caption: "Black and white photograph of an oil lantern standing on driftwood above a pebble beach, a calm sea behind.",
+    coverAlt: "A wooden rowing boat resting on wet sand under a grey evening sky.",
+    caption: "A wooden rowing boat resting on wet sand under a grey evening sky.",
     portraitCover: false,
     intro:
       "The ledge at Mosteiros is about the size of a kitchen table. You reach it by a path that is fine in daylight and less fine at five in the morning, which is when I made most of the trips. I carried an old lantern for the path, and I marked the tripod feet with three dabs of white paint on the first day so that every photograph from the ledge would share the same horizon, to the millimetre.",
@@ -460,12 +473,13 @@ export const posts: Post[] = [
     category: "Craft",
     date: "2026-01-22",
     dateLabel: "Jan 2026",
+    dateFull: "22 January 2026",
     read: "5 min",
     featureMeta: "Craft · Jan 2026 · 5 min",
     standfirst: "A small grey box that makes me stand where the light is, instead of where the camera is.",
     cover: img("C1R1K6c5JBwmHlKnQLbFGetcw.jpg"),
-    coverAlt: "A camera lens close up, the glass catching the light.",
-    caption: "Two hands hold an old film camera up in a dark room.",
+    coverAlt: "Two hands hold an old film camera up in warm, low light.",
+    caption: "Two hands hold an old film camera up in warm, low light.",
     portraitCover: true,
     intro:
       "Every camera I own can meter light better than I can. I still carry a handheld incident meter, a scuffed grey thing I bought second-hand in Porto in 2014, and I use it for almost every exposure.",
@@ -481,12 +495,13 @@ export const posts: Post[] = [
     category: "Essay",
     date: "2025-10-03",
     dateLabel: "Oct 2025",
+    dateFull: "3 October 2025",
     read: "6 min",
     featureMeta: "Essay · Oct 2025 · 6 min",
     standfirst: "Why the shade on a lime-washed wall at noon is the colour of the sky, and why I stopped correcting it.",
     cover: img("pGwetzCW6WLuSbR3sPQy16vLNYw.jpg"),
-    coverAlt: "A photographer in silhouette shooting into a burning sunset.",
-    caption: "The corner of a white building projecting into a pale blue sky.",
+    coverAlt: "A whitewashed chapel on a rocky hilltop above a pale, hazy sea.",
+    caption: "A whitewashed chapel on a rocky hilltop above a pale, hazy sea.",
     portraitCover: true,
     intro:
       "Stand in the Alentejo at noon in July and look at a white wall in shade. It is blue. Not grey, not a darker white: blue. The sun is not lighting it, so the only thing lighting it is the sky, and the sky is very blue.",
@@ -502,12 +517,13 @@ export const posts: Post[] = [
     category: "Field notes",
     date: "2025-06-18",
     dateLabel: "Jun 2025",
+    dateFull: "18 June 2025",
     read: "4 min",
     featureMeta: "Field notes · Jun 2025 · 4 min",
     standfirst: "Two lenses, three cloths, one flask. A list for photographing weather that will not change its mind.",
     cover: img("ueE80ehjm6jYyZQB9Juc5QBZVE.jpg"),
-    coverAlt: "A strip of colour film, warm light bleeding across the frames.",
-    caption: "Seen from above: two cameras, several lenses, round filters, batteries and a charger laid out on a grey floor.",
+    coverAlt: "A photographer in silhouette raises a camera against a streaked sunset sky.",
+    caption: "A photographer in silhouette raises a camera against a streaked sunset sky.",
     portraitCover: true,
     intro:
       "Fog is wet. Everything gets damp, including the inside of the lens if you move between a warm car and a cold hillside too quickly. I carry three microfibre cloths and a zip bag of rice for the camera at night.",
@@ -523,12 +539,13 @@ export const posts: Post[] = [
     category: "Print",
     date: "2025-02-09",
     dateLabel: "Feb 2025",
+    dateFull: "9 February 2025",
     read: "7 min",
     featureMeta: "Print · Feb 2025 · 7 min",
     standfirst: "Making the After Midnight river prints, and eleven proofs of one black.",
     cover: img("T5SOHOg8XujrJVxa6t1Qd3a80.jpg"),
-    coverAlt: "A darkroom under red safelight, prints laid out in trays.",
-    caption: "A camera lens seen face-on in a dark room, its glass catching the light.",
+    coverAlt: "A camera lens seen face-on, its glass catching the light.",
+    caption: "A camera lens seen face-on, its glass catching the light.",
     portraitCover: false,
     intro:
       "Night photographs are almost entirely shadow, and shadow is where prints fail. On screen, the river in After Midnight is a deep blue-black with detail in the ripples. On the first proof it was a flat, dead black with lights floating on it.",
@@ -690,5 +707,5 @@ export const footer = {
   letter: "One letter a season: where the light was good, and what it taught me. No more than four a year.",
   legal:
     "© 2026 Oriel — Mira Castell, a fictional studio. Photographs are free-licence work by the photographers named in the credits.",
-  back: "Back to first light ↑",
+  back: "Back to Top ↑",
 }

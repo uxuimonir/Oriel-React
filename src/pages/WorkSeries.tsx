@@ -20,6 +20,7 @@ export default function SeriesPage() {
         <section className="band pt-10 md:pt-16">
           <div className="shell">
             <p className="t-meta text-blue">{p.number}</p>
+            <p className="t-meta mt-4 text-ash">{p.indexKind} · {p.year}</p>
             <h1 className="t-hero mt-6 max-w-[12ch]"><Words text={p.title} /></h1>
 
             <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_0.8fr]">
@@ -28,7 +29,7 @@ export default function SeriesPage() {
                 <p className="t-body mt-8 max-w-[62ch] text-ash">{p.body}</p>
               </div>
               <ul className="grid h-fit gap-x-8 gap-y-6 sm:grid-cols-2">
-                {[["Year", p.year], ["Location", p.location], ["Hours", p.hours], ["Client", p.client]].map(([k, v], i) => (
+                {[["Year", p.year], ["Location", p.locationFull ?? p.location], ["Hours", p.hours], ["Client", p.client]].map(([k, v], i) => (
                   <li key={k} className="rule pt-4" data-reveal style={delay(i * 0.07)}>
                     <p className="t-meta text-ash">{k}</p>
                     <p className="t-small mt-2">{v}</p>
@@ -114,9 +115,14 @@ export default function SeriesPage() {
               <p className="t-meta text-ash">{p.next.number}</p>
               <Link to={`/work/${p.next.slug}`} className="t-l mt-4 inline-block transition-colors hover:text-blue">{p.next.title}</Link>
             </div>
-            <Link to="/work" className="t-small border-b border-current pb-1 transition-colors hover:text-blue">
-              Every frame, in one index →
-            </Link>
+            <div className="flex flex-wrap gap-x-8 gap-y-4">
+              <Link to="/work" className="t-small border-b border-current pb-1 transition-colors hover:text-blue">
+                All frames →
+              </Link>
+              <Link to="/contact" className="t-small border-b border-current pb-1 transition-colors hover:text-blue">
+                Commission a series →
+              </Link>
+            </div>
           </div>
         </section>
       </article>

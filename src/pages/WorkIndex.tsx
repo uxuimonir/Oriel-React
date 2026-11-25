@@ -70,7 +70,7 @@ export default function WorkIndex({ intro }: { intro: ReactNode }) {
                 <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
                   <span className="t-meta text-blue">{p.code}</span>
                   <h2 id={`series-${p.slug}`} className="t-m text-[24px] md:text-[28px] lg:text-[32px]">{p.title}</h2>
-                  <span className="t-meta text-ash">{p.kind} · {p.year}</span>
+                  <span className="t-meta text-ash">{p.indexKind} · {p.year}</span>
                 </div>
                 <Link to={`/work/${p.slug}`} className="t-meta border-b border-current pb-1 transition-colors duration-300 hover:text-blue">
                   Open series →

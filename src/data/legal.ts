@@ -11,10 +11,13 @@ export interface LegalDoc {
 }
 
 const updated = "24 November 2026"
-const note: LegalSection = {
+const noteFor = (check: string): LegalSection => ({
   title: "Template note",
-  body: "This text is placeholder copy for the Oriel template. Replace the studio details with your own and have the page checked against the rules that apply where you work.",
-}
+  body: `This text is placeholder copy for the Oriel template. ${check}`,
+})
+const note = noteFor("Replace the studio details with your own and have the policy checked against the rules that apply where you work.")
+const termsNote = noteFor("Replace the studio details with your own and have the terms checked against the rules that apply where you work.")
+const cookieNote = noteFor("Update it to match the tools you actually use, such as analytics or embeds, and check it against the rules that apply where you work.")
 
 export const legal: LegalDoc[] = [
   {
@@ -27,9 +30,9 @@ export const legal: LegalDoc[] = [
     lead: "This page explains what Oriel collects when you visit the site or write to the studio, why, and what you can ask me to change. It is written in plain language on purpose.",
     sections: [
       { title: "Who is responsible", body: "Oriel is the studio of Mira Castell, Rua da Luz 14, 2º, 1200-271 Lisboa, Portugal. For anything on this page, write to studio@oriel.photo. I decide how your information is used, so I am the data controller." },
-      { title: "What I collect", body: "When you send the enquiry form I receive your name, email address, the kind of commission, the place and season you have in mind, and your message. When you email or call, I keep the message and the number or address it came from. The site itself records anonymous visit data, such as the pages viewed and the country, through the hosting platform's analytics." },
+      { title: "What I collect", body: "When you send the enquiry form I receive your name, email address, the kind of commission, the place and season you have in mind, and your message. When you email or call, I keep the message and the number or address it came from. The site itself records anonymous visit data, such as the pages viewed and the country, through the hosting platform’s analytics." },
       { title: "Why I use it", body: "I use enquiry details only to reply to you, to quote for a commission, and to keep a record of the conversation. I do not use them for marketing and I do not add anyone to a mailing list. The Field Notes letter, if you ask for it, is sent four times a year at most." },
-      { title: "Who else sees it", body: "Your form message reaches me by email. The website is hosted by a third-party platform, which processes visit data on my behalf. I do not sell or rent personal information, and I share it with nobody else unless the law requires it." },
+      { title: "Who else sees it", body: "Your form message reaches me by email. The website is hosted by Framer, which processes visit data on my behalf. I do not sell or rent personal information, and I share it with nobody else unless the law requires it." },
       { title: "Cookies", body: "The site sets no advertising or tracking cookies. Any strictly necessary cookies are listed on the Cookie Policy page." },
       { title: "How long I keep it", body: "Enquiries that do not become a commission are deleted after twelve months. Commission records, contracts and invoices are kept for as long as Portuguese tax and accounting law requires." },
       { title: "Your rights", body: "You can ask me for a copy of what I hold about you, ask me to correct it, or ask me to delete it. You can also object to how I use it. I will answer within one month. If you are unhappy with the answer, you can complain to the Comissão Nacional de Proteção de Dados (CNPD)." },
@@ -44,16 +47,17 @@ export const legal: LegalDoc[] = [
     title: "Terms of Use",
     description: "The few rules for using the Oriel site and commissioning work from the studio.",
     updated,
-    lead: "These are the few rules for using this site and for commissioning work from the studio. They are short on purpose. A signed commission agreement always takes priority over this page.",
+    lead: "These terms cover the use of this website. Commissions are agreed separately, in writing, before any work begins.",
     sections: [
-      { title: "Using the site", body: "You are welcome to browse, read and share links to this site. Please do not copy it, scrape it, or use it in a way that harms it or other visitors." },
-      { title: "Photographs and copyright", body: "All photographs and text on this site belong to their makers and are protected by copyright. Nothing may be reproduced, edited, printed or used to train a model without written permission." },
-      { title: "Enquiries are not bookings", body: "Sending the enquiry form does not reserve a date or create a contract. A commission begins only when we both sign a written agreement and any deposit has been paid." },
-      { title: "Commissions", body: "The scope, dates, fee, usage rights and cancellation terms of each commission are set out in its own agreement. Rates on this site are a guide and can change before an agreement is signed." },
-      { title: "Links to other sites", body: "This site may link to other websites. I do not control them and I am not responsible for their content or how they use your information." },
-      { title: "No warranty", body: "I try to keep the site accurate and available, but it is provided as it is. I cannot promise it will always be free of errors or interruptions." },
-      { title: "Governing law", body: "These terms are governed by the law of Portugal, and any dispute will be heard by the courts of Lisbon, unless the law where you live says otherwise." },
-      note,
+      { title: "Using the site", body: "You are welcome to browse, read and share links to the site. Please do not copy it, scrape it, or use it in a way that harms it or other visitors." },
+      { title: "Photographs and text", body: "The text on this site is written by the studio. The photographs are free-licence work by the photographers named in the credits, and each one stays with its photographer. You may view them here, but you may not republish or sell them as your own. For any other use, follow the licence stated by the photographer or write to studio@oriel.photo." },
+      { title: "Enquiries and commissions", body: "Sending the enquiry form does not create a contract. A commission begins only when we have agreed the brief, the fee, the dates and the usage rights in writing." },
+      { title: "Links to other sites", body: "The site links to other places, such as Instagram. I do not control them and I am not responsible for what they contain or how they treat your information." },
+      { title: "No guarantees", body: "I try to keep the site accurate and available, but it is provided as it is. Details such as availability, prices and dates can change without notice." },
+      { title: "Liability", body: "To the extent the law allows, the studio is not liable for loss that comes from using the site or relying on its content. Nothing here limits rights you have by law as a consumer." },
+      { title: "Governing law", body: "These terms are governed by the law of Portugal, and any dispute belongs to the courts of Lisboa unless the law gives you the right to bring it elsewhere." },
+      { title: "Changes to these terms", body: "I may update these terms from time to time. The date at the top shows the latest version." },
+      termsNote,
     ],
   },
   {
@@ -63,14 +67,15 @@ export const legal: LegalDoc[] = [
     title: "Cookie Policy",
     description: "Which cookies the Oriel site uses, and how to control them.",
     updated,
-    lead: "Cookies are small files a website stores in your browser. This page lists the ones this site uses and how to control them.",
+    lead: "Cookies are small files a website stores in your browser. Oriel uses as few as it can, and this page lists what they are for.",
     sections: [
-      { title: "What this site uses", body: "Oriel sets no advertising, profiling or cross-site tracking cookies. Anonymous visit counts come from the hosting platform's analytics, which does not need to identify you." },
-      { title: "Strictly necessary", body: "Some storage is needed for the site to work, such as remembering that a form has been sent. It cannot be switched off here and does not need your consent." },
-      { title: "Third-party content", body: "If you follow a link to Instagram or another service, that service may set its own cookies. They are governed by that service's own policy." },
-      { title: "Controlling cookies", body: "You can block or delete cookies in your browser settings. The site will keep working, although some small conveniences may reset." },
-      { title: "Changes to this page", body: "If I add any analytics or other tools that use cookies, I will list them here and ask for your consent first where the law requires it." },
-      note,
+      { title: "What the site uses", body: "The site uses only what is needed to load pages and keep them secure. It does not set advertising cookies, and it does not follow you across other sites." },
+      { title: "Visit statistics", body: "The hosting platform records anonymous visit data, such as pages viewed, country and device type, so I can see whether the site works. It does not identify you personally." },
+      { title: "Enquiry form", body: "Sending the form does not set a cookie. Your message is used as described in the Privacy Policy." },
+      { title: "Embedded content", body: "The site does not embed videos or maps that set their own cookies. If that changes, this page will say so before it happens." },
+      { title: "Controlling cookies", body: "You can block or delete cookies in your browser settings at any time. The site will still work, although some convenience features may behave differently." },
+      { title: "Changes to this policy", body: "If the site starts using other cookies, I will update this page and the date at the top." },
+      cookieNote,
     ],
   },
 ]
